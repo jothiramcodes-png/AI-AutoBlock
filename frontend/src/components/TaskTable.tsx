@@ -39,48 +39,48 @@ export const TaskTable: React.FC<TaskTableProps> = ({
   const getSeverityBadge = (sev: string) => {
     switch (sev) {
       case 'Critical':
-        return 'bg-red-500/20 text-red-400 border-red-500/40';
+        return 'bg-[#D64545]/20 text-[#D64545] border-[#D64545]/40';
       case 'Major':
-        return 'bg-amber-500/20 text-amber-400 border-amber-500/40';
+        return 'bg-[#E8590C]/20 text-[#E8590C] border-[#E8590C]/40';
       case 'Minor':
-        return 'bg-slate-700/50 text-slate-300 border-slate-600';
+        return 'bg-[#1E3A5F] text-[#94A3B8] border-[#1E3A5F]';
       default:
-        return 'bg-slate-800 text-slate-400';
+        return 'bg-[#0B1F3A] text-[#94A3B8] border-[#1E3A5F]';
     }
   };
 
   const getScoreColor = (score: number) => {
-    if (score >= 80) return 'text-red-400 font-bold';
-    if (score >= 60) return 'text-amber-400 font-bold';
-    if (score >= 40) return 'text-blue-400 font-medium';
-    return 'text-slate-400';
+    if (score >= 80) return 'text-[#D64545] font-bold';
+    if (score >= 60) return 'text-[#E8590C] font-bold';
+    if (score >= 40) return 'text-[#4A90D9] font-medium';
+    return 'text-[#94A3B8]';
   };
 
   return (
-    <div className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-lg">
+    <div className="bg-[#13315C]/90 border border-[#1E3A5F] rounded-xl overflow-hidden shadow-lg">
       {/* Header & Filter Controls */}
-      <div className="p-4 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4 bg-slate-900">
+      <div className="p-4 border-b border-[#1E3A5F] flex flex-wrap items-center justify-between gap-4 bg-[#0B1F3A]">
         <div>
           <h2 className="text-base font-bold text-white flex items-center gap-2">
             <span>Maintenance Tasks & Defect Inventory</span>
-            <span className="text-xs px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-normal">
+            <span className="text-xs px-2 py-0.5 rounded bg-[#4A90D9]/20 text-[#4A90D9] font-normal border border-[#4A90D9]/30">
               {filteredTasks.length} Tasks
             </span>
           </h2>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-[#94A3B8] mt-0.5">
             Prioritized by AI explainability model based on safety risk, defect severity, overdue aging, and train punctuality impact
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
           {/* Department Filter */}
-          <div className="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-xs">
+          <div className="flex items-center bg-[#13315C] rounded-lg p-0.5 border border-[#1E3A5F] text-xs">
             {['ALL', 'Engineering', 'Traction', 'S&T'].map((d) => (
               <button
                 key={d}
                 onClick={() => setDeptFilter(d)}
                 className={`px-2.5 py-1 rounded-md font-medium transition-all ${
-                  deptFilter === d ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-slate-200'
+                  deptFilter === d ? 'bg-[#1E3A5F] text-[#F5A623] font-semibold border border-[#F5A623]/30 shadow-sm' : 'text-[#94A3B8] hover:text-white'
                 }`}
               >
                 {d}
@@ -89,13 +89,13 @@ export const TaskTable: React.FC<TaskTableProps> = ({
           </div>
 
           {/* Severity Filter */}
-          <div className="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-xs">
+          <div className="flex items-center bg-[#13315C] rounded-lg p-0.5 border border-[#1E3A5F] text-xs">
             {['ALL', 'Critical', 'Major', 'Minor'].map((s) => (
               <button
                 key={s}
                 onClick={() => setSeverityFilter(s)}
                 className={`px-2.5 py-1 rounded-md font-medium transition-all ${
-                  severityFilter === s ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-slate-200'
+                  severityFilter === s ? 'bg-[#1E3A5F] text-[#F5A623] font-semibold border border-[#F5A623]/30 shadow-sm' : 'text-[#94A3B8] hover:text-white'
                 }`}
               >
                 {s}
@@ -105,13 +105,13 @@ export const TaskTable: React.FC<TaskTableProps> = ({
 
           {/* Search */}
           <div className="relative">
-            <Search className="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-2" />
+            <Search className="w-3.5 h-3.5 text-[#94A3B8] absolute left-2.5 top-2" />
             <input
               type="text"
               placeholder="Search tasks..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="bg-slate-800 border border-slate-700 rounded-lg pl-8 pr-3 py-1 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
+              className="bg-[#13315C] border border-[#1E3A5F] rounded-lg pl-8 pr-3 py-1 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#4A90D9]"
             />
           </div>
         </div>
@@ -120,7 +120,7 @@ export const TaskTable: React.FC<TaskTableProps> = ({
       {/* Table */}
       <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
         <table className="w-full text-left border-collapse text-xs">
-          <thead className="sticky top-0 bg-slate-900 border-b border-slate-800 text-[11px] font-semibold text-slate-400 uppercase tracking-wider z-10">
+          <thead className="sticky top-0 bg-[#0B1F3A] border-b border-[#1E3A5F] text-[11px] font-semibold text-[#94A3B8] uppercase tracking-wider z-10">
             <tr>
               <th className="p-3">Task ID</th>
               <th className="p-3">Section</th>
@@ -133,7 +133,7 @@ export const TaskTable: React.FC<TaskTableProps> = ({
               <th className="p-3 text-center">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800/60">
+          <tbody className="divide-y divide-[#1E3A5F]/60">
             {filteredTasks.map((t) => {
               const isSelected = selectedTaskId === t.task_id;
               const isLocked = lockedTaskIds.has(t.task_id);
@@ -142,8 +142,8 @@ export const TaskTable: React.FC<TaskTableProps> = ({
                 <tr
                   key={t.task_id}
                   onClick={() => onSelectTask(t)}
-                  className={`hover:bg-slate-800/40 cursor-pointer transition-colors ${
-                    isSelected ? 'bg-blue-950/40 border-l-2 border-blue-500' : ''
+                  className={`hover:bg-[#1E3A5F]/40 cursor-pointer transition-colors ${
+                    isSelected ? 'bg-[#1E3A5F]/60 border-l-2 border-[#F5A623]' : ''
                   }`}
                 >
                   <td className="p-3 font-mono font-bold text-slate-200">{t.task_id}</td>
@@ -159,9 +159,9 @@ export const TaskTable: React.FC<TaskTableProps> = ({
                   </td>
                   <td className="p-3">
                     {t.days_overdue > 0 ? (
-                      <span className="text-amber-400 font-semibold">{t.days_overdue} days</span>
+                      <span className="text-[#F5A623] font-semibold">{t.days_overdue} days</span>
                     ) : (
-                      <span className="text-slate-500">On schedule</span>
+                      <span className="text-[#94A3B8]">On schedule</span>
                     )}
                   </td>
                   <td className="p-3 text-slate-300">{t.estimated_duration_hours}h</td>
@@ -174,7 +174,7 @@ export const TaskTable: React.FC<TaskTableProps> = ({
                     <div className="flex items-center justify-center gap-1.5">
                       <button
                         onClick={() => onSelectTask(t)}
-                        className="p-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+                        className="p-1 rounded bg-[#1E3A5F] hover:bg-[#1E3A5F]/80 text-[#94A3B8] hover:text-white transition-colors"
                         title="View Explainability Breakdown"
                       >
                         <Eye className="w-3.5 h-3.5" />
@@ -183,8 +183,8 @@ export const TaskTable: React.FC<TaskTableProps> = ({
                         onClick={() => onToggleLock(t)}
                         className={`p-1 rounded transition-colors ${
                           isLocked
-                            ? 'bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30'
-                            : 'bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white'
+                            ? 'bg-[#F5A623]/20 text-[#F5A623] hover:bg-[#F5A623]/30 border border-[#F5A623]/40'
+                            : 'bg-[#1E3A5F] hover:bg-[#1E3A5F]/80 text-[#94A3B8] hover:text-white'
                         }`}
                         title={isLocked ? 'Task Locked by Officer' : 'Lock/Pin to Block'}
                       >

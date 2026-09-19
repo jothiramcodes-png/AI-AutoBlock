@@ -21,24 +21,24 @@ export const ConflictResolutionView: React.FC<ConflictResolutionViewProps> = ({ 
   });
 
   return (
-    <div className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-lg p-6">
+    <div className="bg-[#13315C]/90 border border-[#1E3A5F] rounded-xl overflow-hidden shadow-lg p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <Layers className="w-5 h-5 text-purple-400" />
+            <Layers className="w-5 h-5 text-[#8B5CF6]" />
             <span>Cross-Department Conflict Resolution & Joint Consolidation Matrix</span>
           </h2>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-[#94A3B8] mt-1">
             Visualizing how independent departmental block requests in BDMS are automatically resolved and consolidated by Google OR-Tools CP-SAT
           </p>
         </div>
-        <div className="px-3 py-1.5 rounded-lg bg-purple-500/20 text-purple-300 border border-purple-500/40 text-xs font-semibold">
+        <div className="px-3 py-1.5 rounded-lg bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/40 text-xs font-semibold">
           {consolidatedWindows.length} Joint Blocks Formed
         </div>
       </div>
 
       {consolidatedWindows.length === 0 ? (
-        <div className="text-center py-12 text-slate-400 text-sm">
+        <div className="text-center py-12 text-[#94A3B8] text-sm">
           No multi-department joint blocks formed in the current planning horizon.
         </div>
       ) : (
@@ -54,16 +54,16 @@ export const ConflictResolutionView: React.FC<ConflictResolutionViewProps> = ({ 
             return (
               <div
                 key={winId}
-                className="bg-slate-950/60 border border-slate-800 hover:border-purple-500/50 rounded-xl p-4 transition-all"
+                className="bg-[#0B1F3A]/90 border border-[#1E3A5F] hover:border-[#8B5CF6]/50 rounded-xl p-4 transition-all"
               >
                 {/* Header */}
-                <div className="flex items-center justify-between border-b border-slate-800 pb-2 mb-3">
+                <div className="flex items-center justify-between border-b border-[#1E3A5F] pb-2 mb-3">
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-xs text-purple-300 font-bold">{winId}</span>
-                    <span className="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300">{secId}</span>
-                    <span className="text-xs text-slate-400">{date}</span>
+                    <span className="font-mono text-xs text-[#8B5CF6] font-bold">{winId}</span>
+                    <span className="text-xs px-2 py-0.5 rounded bg-[#13315C] text-[#94A3B8] border border-[#1E3A5F]">{secId}</span>
+                    <span className="text-xs text-[#94A3B8]">{date}</span>
                   </div>
-                  <div className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">
+                  <div className="text-xs font-bold text-[#2E9E6D] bg-[#2E9E6D]/15 px-2 py-0.5 rounded border border-[#2E9E6D]/30">
                     Saved {savedHours}h Closure
                   </div>
                 </div>
@@ -71,12 +71,12 @@ export const ConflictResolutionView: React.FC<ConflictResolutionViewProps> = ({ 
                 {/* Comparison Columns: BDMS Silo vs AI Joint */}
                 <div className="grid grid-cols-2 gap-3 text-xs">
                   {/* BDMS Siloed Mode */}
-                  <div className="bg-slate-900/90 p-3 rounded-lg border border-slate-800/80">
-                    <div className="flex items-center gap-1.5 text-rose-400 font-semibold mb-2">
+                  <div className="bg-[#13315C] p-3 rounded-lg border border-[#1E3A5F]">
+                    <div className="flex items-center gap-1.5 text-[#D64545] font-semibold mb-2">
                       <XCircle className="w-3.5 h-3.5" />
                       <span>Manual BDMS (Siloed)</span>
                     </div>
-                    <p className="text-[11px] text-slate-400 mb-2">
+                    <p className="text-[11px] text-[#94A3B8] mb-2">
                       Departments request separate blocks sequentially:
                     </p>
                     <div className="space-y-1 text-[11px]">
@@ -87,29 +87,29 @@ export const ConflictResolutionView: React.FC<ConflictResolutionViewProps> = ({ 
                         </div>
                       ))}
                     </div>
-                    <div className="mt-2 pt-2 border-t border-slate-800 text-[11px] font-bold text-rose-300 flex justify-between">
+                    <div className="mt-2 pt-2 border-t border-[#1E3A5F] text-[11px] font-bold text-[#D64545] flex justify-between">
                       <span>Total Corridor Closure:</span>
                       <span>{sumDuration.toFixed(1)} hrs</span>
                     </div>
                   </div>
 
                   {/* AI CP-SAT Consolidated Mode */}
-                  <div className="bg-purple-950/20 p-3 rounded-lg border border-purple-800/40">
-                    <div className="flex items-center gap-1.5 text-emerald-400 font-semibold mb-2">
+                  <div className="bg-[#13315C] p-3 rounded-lg border border-[#8B5CF6]/40">
+                    <div className="flex items-center gap-1.5 text-[#2E9E6D] font-semibold mb-2">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       <span>AI-Optimized (Joint)</span>
                     </div>
-                    <p className="text-[11px] text-purple-200 mb-2">
+                    <p className="text-[11px] text-[#94A3B8] mb-2">
                       Synchronized simultaneously in one track closure:
                     </p>
                     <div className="flex flex-wrap gap-1 mb-2">
                       {departments.map((d) => (
-                        <span key={d} className="px-1.5 py-0.2 rounded bg-purple-500/30 text-purple-200 text-[10px] font-medium">
+                        <span key={d} className="px-1.5 py-0.2 rounded bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/30 text-[10px] font-medium">
                           {d}
                         </span>
                       ))}
                     </div>
-                    <div className="mt-2 pt-2 border-t border-purple-800/50 text-[11px] font-bold text-emerald-300 flex justify-between">
+                    <div className="mt-2 pt-2 border-t border-[#8B5CF6]/40 text-[11px] font-bold text-[#2E9E6D] flex justify-between">
                       <span>Actual Corridor Closure:</span>
                       <span>{maxDuration.toFixed(1)} hrs</span>
                     </div>
@@ -117,7 +117,7 @@ export const ConflictResolutionView: React.FC<ConflictResolutionViewProps> = ({ 
                 </div>
 
                 {/* Tasks List in Window */}
-                <div className="mt-3 pt-2 border-t border-slate-800 text-[11px] text-slate-400">
+                <div className="mt-3 pt-2 border-t border-[#1E3A5F] text-[11px] text-[#94A3B8]">
                   <span className="font-medium text-slate-300">Co-scheduled tasks: </span>
                   {tasks.map((t) => `${t.task_id} (${t.defect_type})`).join(' • ')}
                 </div>

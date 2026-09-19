@@ -80,24 +80,24 @@ export const KPISummaryCards: React.FC<KPISummaryCardsProps> = ({
         return (
           <div
             key={idx}
-            className="bg-slate-900/80 border border-slate-800 rounded-xl p-4 shadow-sm hover:border-slate-700 transition-all flex flex-col justify-between"
+            className="bg-[#13315C]/90 border border-[#1E3A5F] rounded-xl p-4 shadow-sm hover:border-[#4A90D9]/50 transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-center justify-between text-slate-400 mb-2">
+              <div className="flex items-center justify-between text-[#94A3B8] mb-2">
                 <span className="text-xs font-semibold uppercase tracking-wider">{card.title}</span>
-                <div className="p-1.5 rounded-lg bg-slate-800 text-blue-400">
+                <div className="p-1.5 rounded-lg bg-[#1E3A5F] text-[#4A90D9]">
                   <Icon className="w-4 h-4" />
                 </div>
               </div>
               <div className="text-2xl font-bold text-white tracking-tight">{card.value}</div>
-              <div className="text-[11px] text-slate-400 mt-0.5">{card.baseline}</div>
+              <div className="text-[11px] text-[#94A3B8] mt-0.5">{card.baseline}</div>
             </div>
 
-            <div className="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between">
-              <span className={`text-xs font-semibold ${card.isPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
+            <div className="mt-3 pt-2.5 border-t border-[#1E3A5F] flex items-center justify-between">
+              <span className={`text-xs font-semibold ${card.isPositive ? 'text-[#2E9E6D]' : 'text-[#D64545]'}`}>
                 {card.delta}
               </span>
-              <span className="text-[10px] text-slate-400 truncate max-w-[120px]">{card.subtext}</span>
+              <span className="text-[10px] text-[#94A3B8] truncate max-w-[120px]">{card.subtext}</span>
             </div>
           </div>
         );
