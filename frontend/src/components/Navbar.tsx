@@ -24,9 +24,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   runtimeMs
 }) => {
   return (
-    <header className="border-b border-[#1E3A5F] bg-[#0B1F3A]/95 backdrop-blur sticky top-0 z-40">
+    <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-40">
       {/* Simulation Compliance Banner */}
-      <div className="bg-[#F5A623]/10 border-b border-[#F5A623]/25 px-4 py-1 text-center text-xs font-semibold text-[#F5A623] flex items-center justify-center gap-2">
+      <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-1 text-center text-xs font-semibold text-amber-400 flex items-center justify-center gap-2">
         <ShieldAlert className="w-3.5 h-3.5" />
         <span>SYNTHETIC / SIMULATED DATA — NOT INDIAN RAILWAYS OPERATIONAL DATA (SIH PS ID 26027 PROTOTYPE)</span>
       </div>
@@ -35,22 +35,22 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center justify-between h-16">
           {/* Brand & System Title */}
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-[#13315C] border border-[#1E3A5F] rounded-lg shadow-lg flex items-center justify-center">
-              <Cpu className="w-6 h-6 text-[#F5A623]" />
+            <div className="p-2 bg-blue-600 rounded-lg shadow-lg shadow-blue-500/20 flex items-center justify-center">
+              <Cpu className="w-6 h-6 text-white" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-white text-lg tracking-tight">AI-AutoBlock</span>
-                <span className="text-xs font-medium px-2 py-0.5 rounded bg-[#4A90D9]/20 text-[#4A90D9] border border-[#4A90D9]/30">
+                <span className="text-xs font-medium px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">
                   SIH 26027
                 </span>
               </div>
-              <p className="text-xs text-[#94A3B8]">Automatic Block Planning System • Ministry of Railways</p>
+              <p className="text-xs text-slate-400">Automatic Block Planning System • Ministry of Railways</p>
             </div>
           </div>
 
           {/* Navigation Tabs */}
-          <nav className="flex items-center space-x-1 bg-[#13315C] p-1 rounded-xl border border-[#1E3A5F]">
+          <nav className="flex items-center space-x-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/60">
             {[
               { id: 'dashboard', label: 'Executive KPIs' },
               { id: 'gantt', label: 'Corridor Gantt' },
@@ -64,8 +64,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                   activeTab === tab.id
-                    ? 'bg-[#1E3A5F] text-[#F5A623] shadow border border-[#F5A623]/30 font-semibold'
-                    : 'text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F]/60'
+                    ? 'bg-blue-600 text-white shadow'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                 }`}
               >
                 {tab.label}
@@ -76,11 +76,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Horizon Toggle & Status Controls */}
           <div className="flex items-center gap-3">
             {/* Horizon Switcher */}
-            <div className="flex items-center bg-[#13315C] rounded-lg p-0.5 border border-[#1E3A5F] text-xs">
+            <div className="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-xs">
               <button
                 onClick={() => setHorizon('Weekly')}
                 className={`px-2.5 py-1 rounded-md font-medium transition-all ${
-                  horizon === 'Weekly' ? 'bg-[#1E3A5F] text-white shadow-sm' : 'text-[#94A3B8] hover:text-white'
+                  horizon === 'Weekly' ? 'bg-slate-700 text-white' : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
                 Weekly (7D)
@@ -88,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 onClick={() => setHorizon('Monthly')}
                 className={`px-2.5 py-1 rounded-md font-medium transition-all ${
-                  horizon === 'Monthly' ? 'bg-[#1E3A5F] text-white shadow-sm' : 'text-[#94A3B8] hover:text-white'
+                  horizon === 'Monthly' ? 'bg-slate-700 text-white' : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
                 Monthly (30D)
@@ -97,10 +97,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Solver Status Indicator */}
             {solverStatus && (
-              <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#2E9E6D]/15 border border-[#2E9E6D]/30 text-xs text-[#2E9E6D]">
+              <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-400">
                 <Activity className="w-3.5 h-3.5 animate-pulse" />
                 <span className="font-semibold">{solverStatus}</span>
-                {runtimeMs && <span className="text-[#94A3B8] text-[10px]">({runtimeMs}ms)</span>}
+                {runtimeMs && <span className="text-slate-400 text-[10px]">({runtimeMs}ms)</span>}
               </div>
             )}
 
@@ -108,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={onRefresh}
               disabled={loading}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F5A623] hover:bg-[#F5A623]/90 text-[#0B1F3A] text-xs font-bold transition-all shadow-md shadow-[#F5A623]/10 disabled:opacity-50"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 text-xs font-medium transition-all disabled:opacity-50"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
               <span>{loading ? 'Solving...' : 'Re-Run CP-SAT'}</span>

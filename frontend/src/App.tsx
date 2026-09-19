@@ -87,7 +87,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0F172A] text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
       {/* Header & Simulation Notice */}
       <Navbar
         activeTab={activeTab}
@@ -104,7 +104,7 @@ export function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         {/* Error Notification */}
         {error && (
-          <div className="bg-[#D64545]/10 border border-[#D64545]/30 rounded-xl p-4 flex items-center gap-3 text-[#D64545] text-sm">
+          <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 flex items-center gap-3 text-red-400 text-sm">
             <AlertCircle className="w-5 h-5 shrink-0" />
             <div className="flex-1">
               <span className="font-bold">Backend Connection Notice: </span>
@@ -112,7 +112,7 @@ export function App() {
             </div>
             <button
               onClick={loadAllData}
-              className="px-3 py-1 rounded bg-[#D64545]/30 hover:bg-[#D64545]/40 text-xs font-semibold text-white transition-colors"
+              className="px-3 py-1 rounded bg-red-600/30 hover:bg-red-600/40 text-xs font-semibold text-white transition-colors"
             >
               Retry
             </button>
@@ -189,11 +189,11 @@ export function App() {
       )}
 
       {/* Footer */}
-      <footer className="border-t border-[#1E3A5F] bg-[#0B1F3A] py-4 px-6 text-center text-xs text-[#94A3B8]">
+      <footer className="border-t border-slate-900 bg-slate-950 py-4 px-6 text-center text-xs text-slate-400">
         <p>
           AI-Powered Automatic Block Planning System • SIH PS ID 26027 (Ministry of Railways)
         </p>
-        <p className="text-[#94A3B8]/80 mt-0.5">
+        <p className="text-slate-400 mt-0.5">
           SYNTHETIC / SIMULATED DATA — NOT INDIAN RAILWAYS OPERATIONAL DATA. Google OR-Tools CP-SAT Scheduling Core.
         </p>
       </footer>
