@@ -1,0 +1,13 @@
+corridor_id,corridor_name,week_number,projected_rakes_per_week,priority_freight_flag,max_tolerable_delay_hours,disruption_penalty_factor
+SEC-001,New Delhi (NDLS) - Ghaziabad (GZB),38,55,True,1.7,1.5
+SEC-002,Ghaziabad (GZB) - Aligarh Jn (ALJN),38,58,True,1.9,1.5
+SEC-003,Aligarh Jn (ALJN) - Tundla Jn (TDL),38,42,True,1.7,1.5
+SEC-004,Tundla Jn (TDL) - Kanpur Central (CNB),38,38,True,2.5,1.5
+SEC-005,Ghaziabad (GZB) - Meerut City (MTC),38,26,True,4.0,1.5
+SEC-006,Meerut City (MTC) - Saharanpur (SRE),38,18,True,2.7,1.5
+SEC-007,Aligarh Jn (ALJN) - Bareilly Jn (BE),38,21,True,3.9,1.5
+SEC-008,Tundla Jn (TDL) - Agra Cantt (AGC),38,57,True,2.5,1.5
+SEC-009,Kanpur Central (CNB) - Lucknow (LKO),38,52,True,2.1,1.5
+SEC-010,Hathras Jn (HRS) - Hathras Qilah (HRF),38,12,False,6.4,1.0
+SEC-011,Shikohabad (SKB) - Farrukhabad (FBD),38,5,False,7.0,1.0
+SEC-012,Dadri Freight Bypass (DER - DBR),38,40,True,2.5,1.5

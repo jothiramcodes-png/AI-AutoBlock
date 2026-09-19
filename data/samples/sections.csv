@@ -1,0 +1,13 @@
+section_id,name,division,zone,tier,speed_limit_kmh,daily_gmt,length_km,num_tracks,max_weekly_block_hours,description
+SEC-001,New Delhi (NDLS) - Ghaziabad (GZB),Delhi,Northern Railway,Tier-1 Trunk,130,42.5,25.6,4,16.0,High-density quad-track suburban and trunk corridor connecting Capital to UP
+SEC-002,Ghaziabad (GZB) - Aligarh Jn (ALJN),Prayagraj,North Central Railway,Tier-1 Trunk,160,48.0,106.3,2,14.0,Semi-high speed Delhi-Howrah main trunk corridor with Vande Bharat operations
+SEC-003,Aligarh Jn (ALJN) - Tundla Jn (TDL),Prayagraj,North Central Railway,Tier-1 Trunk,160,45.2,78.4,2,14.0,"Heavy mixed traffic trunk line, critical container & freight artery"
+SEC-004,Tundla Jn (TDL) - Kanpur Central (CNB),Prayagraj,North Central Railway,Tier-1 Trunk,160,52.1,228.7,3,18.0,Busiest passenger and freight corridor in Northern India with 3rd line
+SEC-005,Ghaziabad (GZB) - Meerut City (MTC),Delhi,Northern Railway,Tier-2 Main,110,24.5,47.0,2,12.0,Double line electrified main route to Saharanpur and Dehradun
+SEC-006,Meerut City (MTC) - Saharanpur (SRE),Delhi,Northern Railway,Tier-2 Main,110,21.0,114.2,2,12.0,Regional connector linking Western UP to Punjab and Jammu
+SEC-007,Aligarh Jn (ALJN) - Bareilly Jn (BE),Moradabad,Northern Railway,Tier-2 Main,100,18.4,167.0,1,10.0,Single line branch connecting North Central to Northern Railway loop
+SEC-008,Tundla Jn (TDL) - Agra Cantt (AGC),Agra,North Central Railway,Tier-1 Trunk,130,36.8,28.5,2,12.0,Tourist and express corridor connecting Delhi-Howrah to Delhi-Mumbai routes
+SEC-009,Kanpur Central (CNB) - Lucknow (LKO),Lucknow,Northern Railway,Tier-1 Trunk,130,38.0,72.0,2,14.0,Very high density intercity twin-city corridor with Shatabdi & Tejas
+SEC-010,Hathras Jn (HRS) - Hathras Qilah (HRF),Prayagraj,North Central Railway,Tier-3 Branch,75,6.2,9.2,1,8.0,Single line rural branch feeder
+SEC-011,Shikohabad (SKB) - Farrukhabad (FBD),Prayagraj,North Central Railway,Tier-3 Branch,80,8.5,105.0,1,8.0,Agricultural freight feeder branch line
+SEC-012,Dadri Freight Bypass (DER - DBR),Delhi,Northern Railway,Tier-1 Trunk,100,40.0,34.0,2,16.0,Dedicated freight interchange feeder connecting to Eastern DFC
