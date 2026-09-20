@@ -34,19 +34,27 @@ export const ExplainabilityDrawer: React.FC<ExplainabilityDrawerProps> = ({
     : [];
 
   return (
-    <div className="fixed inset-y-0 right-0 w-full max-w-lg bg-slate-900 border-l border-slate-800 shadow-2xl z-50 overflow-y-auto flex flex-col justify-between">
-      <div>
-        {/* Header */}
-        <div className="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60 sticky top-0 z-10 backdrop-blur">
-          <div className="flex items-center gap-2">
-            <div className="p-1.5 rounded-lg bg-blue-500/20 text-blue-400">
-              <HelpCircle className="w-5 h-5" />
+    <>
+      {/* Backdrop overlay */}
+      <div
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      <div className="fixed inset-y-0 right-0 w-full sm:max-w-lg bg-slate-900 border-l border-slate-800 shadow-2xl z-50 overflow-y-auto flex flex-col justify-between">
+        <div>
+          {/* Header */}
+          <div className="p-3.5 sm:p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60 sticky top-0 z-10 backdrop-blur">
+            <div className="flex items-center gap-2">
+              <div className="p-1.5 rounded-lg bg-blue-500/20 text-blue-400 shrink-0">
+                <HelpCircle className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-white">AI Decision Explainability</h3>
+                <p className="text-[10px] sm:text-[11px] text-slate-400">Mathematical score breakdown & placement audit</p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-sm font-bold text-white">AI Decision Explainability</h3>
-              <p className="text-[11px] text-slate-400">Mathematical score breakdown & placement audit</p>
-            </div>
-          </div>
           <button
             onClick={onClose}
             className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
@@ -188,5 +196,6 @@ export const ExplainabilityDrawer: React.FC<ExplainabilityDrawerProps> = ({
         </button>
       </div>
     </div>
+    </>
   );
 };

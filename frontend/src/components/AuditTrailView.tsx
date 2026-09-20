@@ -24,29 +24,35 @@ export const AuditTrailView: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-lg p-6">
-      <div className="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
+    <div className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-lg p-4 sm:p-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 sm:mb-6 border-b border-slate-800 pb-4">
         <div>
-          <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <History className="w-5 h-5 text-blue-400" />
+          <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+            <History className="w-5 h-5 text-blue-400 shrink-0" />
             <span>Optimization Run & Decision Audit Trail</span>
           </h2>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-[11px] sm:text-xs text-slate-400 mt-1">
             Immutable log of CP-SAT optimization runs, re-optimizations, solver convergence statuses, and runtimes
           </p>
         </div>
         <button
           onClick={loadLogs}
           disabled={loading}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 transition-colors self-start sm:self-auto shrink-0"
         >
           <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
           <span>Refresh Audit</span>
         </button>
       </div>
 
+      {/* Mobile Swipe Hint */}
+      <div className="sm:hidden px-3 py-1 bg-slate-950/70 border-b border-slate-800/80 text-[10px] text-slate-400 flex items-center justify-between mb-2 rounded-lg">
+        <span>Swipe horizontally to view full audit logs</span>
+        <span>→</span>
+      </div>
+
       <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs border-collapse">
+        <table className="w-full text-left text-xs border-collapse min-w-[700px]">
           <thead>
             <tr className="border-b border-slate-800 text-[11px] font-semibold text-slate-400 uppercase tracking-wider bg-slate-950/40">
               <th className="p-3">Run ID</th>

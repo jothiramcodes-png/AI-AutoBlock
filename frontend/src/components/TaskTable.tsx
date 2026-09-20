@@ -59,27 +59,27 @@ export const TaskTable: React.FC<TaskTableProps> = ({
   return (
     <div className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-lg">
       {/* Header & Filter Controls */}
-      <div className="p-4 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4 bg-slate-900">
+      <div className="p-3 sm:p-4 border-b border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4 bg-slate-900">
         <div>
-          <h2 className="text-base font-bold text-white flex items-center gap-2">
+          <h2 className="text-sm sm:text-base font-bold text-white flex flex-wrap items-center gap-2">
             <span>Maintenance Tasks & Defect Inventory</span>
             <span className="text-xs px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-normal">
               {filteredTasks.length} Tasks
             </span>
           </h2>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-[11px] sm:text-xs text-slate-400 mt-0.5">
             Prioritized by AI explainability model based on safety risk, defect severity, overdue aging, and train punctuality impact
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 w-full lg:w-auto">
           {/* Department Filter */}
-          <div className="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-xs">
+          <div className="flex items-center overflow-x-auto no-scrollbar bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-xs shrink-0">
             {['ALL', 'Engineering', 'Traction', 'S&T'].map((d) => (
               <button
                 key={d}
                 onClick={() => setDeptFilter(d)}
-                className={`px-2.5 py-1 rounded-md font-medium transition-all ${
+                className={`px-2.5 py-1 rounded-md font-medium transition-all shrink-0 ${
                   deptFilter === d ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
@@ -89,12 +89,12 @@ export const TaskTable: React.FC<TaskTableProps> = ({
           </div>
 
           {/* Severity Filter */}
-          <div className="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-xs">
+          <div className="flex items-center overflow-x-auto no-scrollbar bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-xs shrink-0">
             {['ALL', 'Critical', 'Major', 'Minor'].map((s) => (
               <button
                 key={s}
                 onClick={() => setSeverityFilter(s)}
-                className={`px-2.5 py-1 rounded-md font-medium transition-all ${
+                className={`px-2.5 py-1 rounded-md font-medium transition-all shrink-0 ${
                   severityFilter === s ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
@@ -104,22 +104,28 @@ export const TaskTable: React.FC<TaskTableProps> = ({
           </div>
 
           {/* Search */}
-          <div className="relative">
+          <div className="relative w-full sm:w-52">
             <Search className="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-2" />
             <input
               type="text"
               placeholder="Search tasks..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="bg-slate-800 border border-slate-700 rounded-lg pl-8 pr-3 py-1 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
+              className="bg-slate-800 border border-slate-700 rounded-lg pl-8 pr-3 py-1 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 w-full"
             />
           </div>
         </div>
       </div>
 
+      {/* Mobile Swipe Hint */}
+      <div className="sm:hidden px-3 py-1 bg-slate-950/70 border-b border-slate-800/80 text-[10px] text-slate-400 flex items-center justify-between">
+        <span>Swipe horizontally to view all columns</span>
+        <span>→</span>
+      </div>
+
       {/* Table */}
       <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
-        <table className="w-full text-left border-collapse text-xs">
+        <table className="w-full text-left border-collapse text-xs min-w-[720px]">
           <thead className="sticky top-0 bg-slate-900 border-b border-slate-800 text-[11px] font-semibold text-slate-400 uppercase tracking-wider z-10">
             <tr>
               <th className="p-3">Task ID</th>

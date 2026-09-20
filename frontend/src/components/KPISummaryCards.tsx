@@ -74,13 +74,13 @@ export const KPISummaryCards: React.FC<KPISummaryCardsProps> = ({
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4">
       {cards.map((card, idx) => {
         const Icon = card.icon;
         return (
           <div
             key={idx}
-            className="bg-slate-900/80 border border-slate-800 rounded-xl p-4 shadow-sm hover:border-slate-700 transition-all flex flex-col justify-between"
+            className="bg-slate-900/80 border border-slate-800 rounded-xl p-3.5 sm:p-4 shadow-sm hover:border-slate-700 transition-all flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between text-slate-400 mb-2">
@@ -89,7 +89,7 @@ export const KPISummaryCards: React.FC<KPISummaryCardsProps> = ({
                   <Icon className="w-4 h-4" />
                 </div>
               </div>
-              <div className="text-2xl font-bold text-white tracking-tight">{card.value}</div>
+              <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">{card.value}</div>
               <div className="text-[11px] text-slate-400 mt-0.5">{card.baseline}</div>
             </div>
 

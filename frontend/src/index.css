@@ -23,3 +23,12 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
+
+/* Utility for smooth touch scrolling without scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

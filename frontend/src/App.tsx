@@ -101,18 +101,20 @@ export function App() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4 sm:space-y-6">
         {/* Error Notification */}
         {error && (
-          <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 flex items-center gap-3 text-red-400 text-sm">
-            <AlertCircle className="w-5 h-5 shrink-0" />
-            <div className="flex-1">
+          <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-3.5 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center gap-3 text-red-400 text-xs sm:text-sm">
+            <div className="flex items-center gap-2">
+              <AlertCircle className="w-5 h-5 shrink-0" />
               <span className="font-bold">Backend Connection Notice: </span>
+            </div>
+            <div className="flex-1">
               {error}. Ensure the FastAPI server is running on http://localhost:8000.
             </div>
             <button
               onClick={loadAllData}
-              className="px-3 py-1 rounded bg-red-600/30 hover:bg-red-600/40 text-xs font-semibold text-white transition-colors"
+              className="px-3 py-1 rounded bg-red-600/30 hover:bg-red-600/40 text-xs font-semibold text-white transition-colors self-end sm:self-auto shrink-0"
             >
               Retry
             </button>
